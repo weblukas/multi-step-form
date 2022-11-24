@@ -1,17 +1,19 @@
-import Step_1 from "./pages/Step_1"
-import Step_1 from "./pages/Step_2"
 import { Routes, Route } from 'react-router-dom';
-function App() {
+import HeroImg from './components/HeroImg/HeroImg';
+import Step1Page from './pages/Step1Page';
+import Step2Page from './pages/Step2Page';
+import style from './App.module.scss'
 
-  return (
-    <div className="App">
-    <Routes>
-      <Step_1 />
-      <Step_2 />
-    </Routes>
-     
-    </div>
-  )
+function App() {
+    return (
+        <div className={style.App}>
+                <HeroImg />
+            <Routes>
+                <Route path="/" element={<Step1Page />} />
+                <Route path="/step-2" element={<Step2Page />} />
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;

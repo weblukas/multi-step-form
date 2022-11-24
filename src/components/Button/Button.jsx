@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './Button.module.scss'
 
-const Button = () => {
+const Button = ({handleClick}) => {
   return (
-    <button type="submit" className={style.button}>Next</button>
+    <button type="submit" className={style.button} onClick={handleClick}>Next</button>
   )
 }
 
