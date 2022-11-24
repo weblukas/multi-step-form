@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.page {
+    display: flex;
+}
+
+.servicesContainer {
+    max-width: 1384px; // 86.5rem;
+    // padding: 7.333rem 10.625rem 10.5rem;
+    padding-left: 19.688rem;
+    padding-top: 10.625rem;
+    position: relative;
+    margin-left: -149px;
+}
+
+.cardsContainer {
+    display: flex;
+    margin-top: 78px;
+    gap: 27.28px;
+
+}
+
+.stepProgress {
+    color: $primaryColor;
+    margin-bottom: 81.95px;
+    display: inline-block
+}
