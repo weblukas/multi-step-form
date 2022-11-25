@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.servicesContainer {
+    max-width: 1225px;
+    padding:  117px 185.5px 0 164px;
+}

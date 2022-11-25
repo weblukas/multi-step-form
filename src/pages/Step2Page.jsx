@@ -22,7 +22,7 @@ const Step2Page = () => {
         <div className={style.servicesContainer}>
             <div className={style.flexContainer}>
                 <Stepper progress="2" />
-                <ProgressBar progress="2" />
+                <ProgressBar progress="6" />
             </div>
             <Heading content="What kind of services you are quiz?" className={style.headingSmall} />
             <Paragraph

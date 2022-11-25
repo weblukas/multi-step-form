@@ -1,0 +1,30 @@
+@import '../../variables.scss';
+
+.pcContainer {
+    position: absolute;
+    top: 77.5px;
+    left: 388.5px;
+}
+
+.ellipse {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 41px;
+    height: 41px;
+}
+
+.rectangle {
+    position: absolute;
+    top: 54px;
+    left: 27px;
+}
+
+.stepCounter {
+    color: $textVeryLightColor;
+    font-weight: 700;
+    position: absolute;
+    top: 16px;
+    left: 23px;
+
+}

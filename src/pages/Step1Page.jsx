@@ -7,18 +7,17 @@ import { useNavigate } from 'react-router-dom';
 import Heading from '../components/Heading/Heading';
 import Stepper from '../components/Stepper/Stepper';
 import Paragraph from '../components/Paragraph/Paragraph';
+import Radio from '@mui/material/Radio';
 import StandaloneRadio from '../components/StandaloneRadio/StandaloneRadio';
-
 
 const Step1Page = () => {
     const navigate = useNavigate();
-    const [selectedValue, setSelectedValue] = useState('')
+    const [selectedValue, setSelectedValue] = useState('');
 
-    const handleChange = (e)=>{
-        setSelectedValue(e.target.value)
-    }
+    const handleChange = (e) => {
+        setSelectedValue(e.target.value);
+    };
 
-   
     return (
         <div>
             <div className={style.servicesContainer}>
@@ -30,13 +29,25 @@ const Step1Page = () => {
                 />
                 <div className={style.cardsContainer}>
                     <CheckboxCard image="diagram.png" title="Corporate Services">
-                        <StandaloneRadio value='a' name="radio-buttons" onChange={handleChange} checked={selectedValue === 'a'}/>
+                        <StandaloneRadio
+                            checked={selectedValue === 'corporate services'}
+                            handleChange={handleChange}
+                            value="corporate services"
+                            name="radio-buttons"
+                            inputProps={{ 'aria-label': 'corporate services' }}
+                        />
                     </CheckboxCard>
                     <CheckboxCard image="switch.png" title="Freelancing Services">
-                        <StandaloneRadio value='b' name="radio-buttons" onChange={handleChange} checked={selectedValue === 'b'}/>
+                        <StandaloneRadio
+                            checked={selectedValue === 'freelancing services'}
+                            handleChange={handleChange}
+                            value="freelancing services"
+                            name="radio-buttons"
+                            inputProps={{ 'aria-label': 'freelancing servieces' }}
+                        />
                     </CheckboxCard>
                     <CheckboxCard image="web-development.png" title="Development">
-                        <StandaloneRadio value='c' name="radio-buttons" onChange={handleChange} checked={selectedValue === 'c'}/>
+                        <StandaloneRadio checked={selectedValue === 'development'} handleChange={handleChange} value="development" name="radio-buttons" inputProps={{ 'aria-label': 'development' }} />
                     </CheckboxCard>
                 </div>
                 <HorizontalDivider />
