@@ -2,6 +2,14 @@
 
 .heading {
     font-weight: 700;
-    font-size: 49.39px;
     color: $textDarkerColor;
+    margin: 0;
+}
+
+.bigHeading {
+    color: red;
+}
+
+.smallHeading {
+    color: green;
 }

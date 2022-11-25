@@ -1,9 +1,13 @@
+
 import React from 'react'
+import Input from '../Input/Input'
 
 const Form = () => {
   return (
     <div>
-        <input type='text' />
+        <Input label='First and last Name'/>
+        <Input label='Email Address'/>
+        <Input label='Phone'/>
     </div>
   )
 }
