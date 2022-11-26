@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../components/Button/Button';
-import CheckboxCard from '../components/CheckboxCard/CheckboxCard';
+import SeviceCard from '../components/ServiceCard/ServiceCard';
 import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider';
 import style from './Step1Page.module.scss';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,7 @@ const Step1Page = () => {
                     usu, facete detracto patrioque an per, lucilius pertinacia eu vel."
                 />
                 <div className={style.cardsContainer}>
-                    <CheckboxCard image="diagram.png" title="Corporate Services">
+                    <SeviceCard image="diagram.png" title="Corporate Services">
                         <StandaloneRadio
                             checked={selectedValue === 'corporate services'}
                             handleChange={handleChange}
@@ -36,8 +36,8 @@ const Step1Page = () => {
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'corporate services' }}
                         />
-                    </CheckboxCard>
-                    <CheckboxCard image="switch.png" title="Freelancing Services">
+                    </SeviceCard>
+                    <SeviceCard image="switch.png" title="Freelancing Services">
                         <StandaloneRadio
                             checked={selectedValue === 'freelancing services'}
                             handleChange={handleChange}
@@ -45,10 +45,10 @@ const Step1Page = () => {
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'freelancing servieces' }}
                         />
-                    </CheckboxCard>
-                    <CheckboxCard image="web-development.png" title="Development">
+                    </SeviceCard>
+                    <SeviceCard image="web-development.png" title="Development">
                         <StandaloneRadio checked={selectedValue === 'development'} handleChange={handleChange} value="development" name="radio-buttons" inputProps={{ 'aria-label': 'development' }} />
-                    </CheckboxCard>
+                    </SeviceCard>
                 </div>
                 <HorizontalDivider />
                 <Button handleClick={() => navigate('/step-2')} />

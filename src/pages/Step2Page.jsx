@@ -13,6 +13,7 @@ import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider
 
 
 
+
 const Step2Page = () => {
     const navigate = useNavigate();
     const onSubmit = ()=>{

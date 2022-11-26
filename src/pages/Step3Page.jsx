@@ -5,6 +5,8 @@ import style from './Step3Page.module.scss';
 import Heading from '../components/Heading/Heading';
 import Paragraph from '../components/Paragraph/Paragraph';
 import Multiselect from '../components/Multiselect/Multiselect';
+import Textarea from '../components/Textarea/Textarea';
+import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider';
 
 const Step3Page = () => {
     return (
@@ -19,6 +21,8 @@ const Step3Page = () => {
                 turque usu, facete detracto patrioque an per, lucilius pertinacia eu vel."
             />
             <Multiselect />
+            <Textarea />
+            <HorizontalDivider />
         </div>
     );
 };
