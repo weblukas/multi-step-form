@@ -7,9 +7,29 @@
 
 .servicesContainer {
     max-width: 1225px;
-    padding:  117px 327.5px 0 164px;
+    padding: 117px 280px 0 164px;
 }
 
 .horizontalDivider {
     margin-top: 56px;
+}
+
+.container {
+    @extend .flexContainer;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 17px;
+}
+
+// .formGroup {
+//     // display: flex;
+//     // background-color: green;
+// }
+
+.checkboxContainer {
+    width: 244px;
+    height: 64px;
+    border: 1px solid $borderDarkerColor;
+    display: flex;
+    padding-left: 19px;
 }

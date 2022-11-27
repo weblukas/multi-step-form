@@ -1,10 +1,8 @@
-import React from 'react'
-import style from './HorizontalDivider.module.scss'
+import React from 'react';
+import style from './HorizontalDivider.module.scss';
 
-const HorizontalDivider = ({className}) => {
-  return (
-    <div className={`${style.divider} ${className}`}></div>
-  )
-}
+const HorizontalDivider = ({ className }) => {
+    return <div className={`${style.divider} ${className}`}></div>;
+};
 
-export default HorizontalDivider
+export default HorizontalDivider;

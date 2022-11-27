@@ -10,7 +10,14 @@ const StandaloneRadio = ({ handleChange, checked, value, name }) => {
         color: '#E1E1E1'
     });
 
-    return <StyledRadio checked={checked} onChange={handleChange} value={value} name={name} />;
+    return (
+        <StyledRadio
+            checked={checked}
+            onChange={handleChange}
+            value={value}
+            name={name}
+        />
+    );
 };
 
 export default StandaloneRadio;

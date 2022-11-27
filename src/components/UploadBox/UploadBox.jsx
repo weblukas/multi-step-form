@@ -22,7 +22,9 @@ const UploadBox = () => {
                 ( File accepted: pdf. doc/ docx -<br />
                 Max file size : 150kb for demo limit )
             </p>
-            <button className={style.flexContainer_btn}>Upload The Documents</button>
+            <button className={style.flexContainer_btn}>
+                Upload The Documents
+            </button>
         </div>
     );
 };

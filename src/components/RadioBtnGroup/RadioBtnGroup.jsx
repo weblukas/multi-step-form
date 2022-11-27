@@ -8,43 +8,43 @@ import style from './RadioBtnGroup.module.scss';
 import { styled } from '@mui/material/styles';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 const StyledFormLabel = styled(FormLabel)({
-   color: '#5F5F63',
-   fontSize: '23px',
-   fontWeight: '800',
+    color: '#5F5F63',
+    fontSize: '23px',
+    fontWeight: '800'
 });
 
 const RadioBtnGroup = () => {
-
     const {
         handleSubmit,
         control,
         formState: { errors }
-    } = useFormContext()
+    } = useFormContext();
     return (
         <div className={style.radioBtnGroupContainer}>
-            {/* <FormControl>
-                <StyledFormLabel id="row-radio-buttons-group-label">Gender</StyledFormLabel>
-                <RadioGroup row aria-labelledby="radio-buttons-group-label" defaultValue="male" name="row-radio-buttons-group">
-                    <FormControlLabel value="male" control={<Radio />} label="Male" />
-                    <FormControlLabel value="female" control={<Radio />} label="Female" />
-                </RadioGroup>
-            </FormControl> */}
             <Controller
-          render={({ field }) => (
-            <RadioGroup row aria-label="gender" defaultValue="male" {...field}>
-              <FormControlLabel
-                value="male"
-                control={<Radio />}
-                label="Male"
-              />
-              <FormControlLabel value="female" control={<Radio />} label="Female" />
-            </RadioGroup>
-          )}
-          name="RadioGroup"
-          control={control}
-        />
+                render={({ field }) => (
+                    <RadioGroup
+                        row
+                        aria-label="gender"
+                        defaultValue="male"
+                        {...field}
+                    >
+                        <FormControlLabel
+                            value="male"
+                            control={<Radio />}
+                            label="Male"
+                        />
+                        <FormControlLabel
+                            value="female"
+                            control={<Radio />}
+                            label="Female"
+                        />
+                    </RadioGroup>
+                )}
+                name="RadioGroup"
+                control={control}
+            />
         </div>
     );
 };

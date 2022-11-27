@@ -26,9 +26,9 @@ const Step1Page = () => {
                     What kind of Services You need?
                 </Heading>
                 <Paragraph>
-                    content="Tation argumentum et usu, dicit viderer evertitur
+                    Tation argumentum et usu, dicit viderer evertitur
                     te has. Eu dictas concludaturque usu, facete detracto
-                    patrioque an per, lucilius pertinacia eu vel."
+                    patrioque an per, lucilius pertinacia eu vel.
                 </Paragraph>
 
                 <div className={style.cardsContainer}>
@@ -62,7 +62,7 @@ const Step1Page = () => {
                         />
                     </SeviceCard>
                 </div>
-                <HorizontalDivider width="" />
+                <HorizontalDivider  className={style.horizontalDivider}/>
                 <Button
                     className={style.button}
                     size="medium"

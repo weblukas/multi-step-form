@@ -20,6 +20,7 @@ const Step3Page = () => {
     const handleBackward = () => {
         navigate('/step-2');
     };
+
     return (
         <div className={style.servicesContainer}>
             <div className={style.flexContainer}>
@@ -34,7 +35,7 @@ const Step3Page = () => {
                 has. Eu dictas concluda- turque usu, facete detracto patrioque
                 an per, lucilius pertinacia eu vel."
             </Paragraph>
-            <Multiselect />
+            {/* <Multiselect /> */}
             <Textarea />
             <HorizontalDivider className={style.horizontalDivider} />
             <div className={style.btnContainer}>

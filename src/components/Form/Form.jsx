@@ -4,7 +4,8 @@ import { Controller, useFormContext } from 'react-hook-form';
 import style from './Form.module.scss';
 
 const Form = () => {
-    const emailValidation = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailValidation =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const {
         handleSubmit,
@@ -27,7 +28,11 @@ const Form = () => {
     // luka@wp.pl
     const onSubmit = (data) => {
         const { firstAndLastName, emailAddress, phone } = data;
-        setPerson({ PersonName: firstAndLastName, PersonAddress: emailAddress, PersonPhone: phone });
+        setPerson({
+            PersonName: firstAndLastName,
+            PersonAddress: emailAddress,
+            PersonPhone: phone
+        });
 
         console.log(person);
     };
@@ -36,7 +41,9 @@ const Form = () => {
 
     const submitForm = () => {
         if (formRef.current) {
-            formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+            formRef.current.dispatchEvent(
+                new Event('submit', { cancelable: true, bubbles: true })
+            );
         }
     };
 
@@ -47,21 +54,50 @@ const Form = () => {
                     name="firstAndLastName"
                     control={control}
                     rules={{ required: true, maxLength: 30 }}
-                    render={({ field }) => <TextField {...field} label="First and last Name" className={style.input} />}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            value={person.firstAndLastName}
+                            label="First and last Name"
+                            className={style.input}
+                        />
+                    )}
                 />
                 <Controller
                     name="emailAddress"
                     control={control}
                     rules={{ required: true, pattern: emailValidation }}
-                    render={({ field }) => <TextField {...field} label="Email Address" className={style.input} />}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            value={person.emailAddress}
+                            label="Email Address"
+                            className={style.input}
+                        />
+                    )}
                 />
-                <Controller name="phone" control={control} rules={{ required: true }} render={({ field }) => <TextField {...field} label="Phone" type="number" className={style.input} />} />
+                <Controller
+                    name="phone"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field }) => (
+                        <TextField
+                            {...field}
+                            value={person.phone}
+                            label="Phone"
+                            type="number"
+                            className={style.input}
+                        />
+                    )}
+                />
                 {errors.firstAndLastName && <p>name is not valid</p>}
                 {errors.emailAddress && <p>email address is not valid</p>}
                 {errors.phone && <p>phone number is not valid</p>}
             </form>
 
-            <button type='button' onClick={submitForm}>submit</button>
+            <button type="button" onClick={submitForm}>
+                submit
+            </button>
         </>
     );
 };

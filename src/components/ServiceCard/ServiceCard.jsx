@@ -5,7 +5,7 @@ const SeviceCard = ({ image, title, children }) => {
     return (
         <div className={style.card}>
             {children}
-            <img src={image} alt="" className={style.card_image}/>
+            <img src={image} alt="" className={style.card_image} />
             <span>{title}</span>
         </div>
     );

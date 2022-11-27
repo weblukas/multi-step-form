@@ -6,7 +6,7 @@ const HeroImg = () => {
     return (
         <div className={style.heroContainer}>
             <ProgressCounter />
-            <img src="dog_bigger1.png" alt="" className={style.HeroImg}/>
+            <img src="dog_bigger1.png" alt="" className={style.HeroImg} />
         </div>
     );
 };
