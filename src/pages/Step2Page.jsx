@@ -10,33 +10,45 @@ import Button from '../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import UploadBox from '../components/UploadBox/UploadBox';
 import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider';
-
-
-
+import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 
 const Step2Page = () => {
     const navigate = useNavigate();
-    const onSubmit = ()=>{
-        navigate('/step-3')
-    }
+    const methods = useForm();
+    const handleNext = () => {
+        navigate('/step-3');
+    };
     return (
-        <div className={style.servicesContainer}>
-            <div className={style.flexContainer}>
-                <Stepper progress="2" />
-                <ProgressBar progress="6" />
+        <FormProvider {...methods}>
+            <div className={style.servicesContainer}>
+                <div className={style.flexContainer}>
+                    <Stepper progress="2" />
+                    <ProgressBar progress="6" />
+                </div>
+                <Heading className={style.headingSmall}>
+                    What kind of services you are quiz?
+                </Heading>
+                <Paragraph>
+                    content="Tation argumentum et usu, dicit viderer evertitur
+                    te has. Eu dictas concluda- turque usu, facete detracto
+                    patrioque an per, lucilius pertinacia eu vel."
+                </Paragraph>
+
+                <Form />
+                <RadioBtnGroup />
+                <h2>Upload Documents</h2>
+                <UploadBox />
+                <HorizontalDivider className={style.horizontalDivider} />
+                <Button
+                    size="small"
+                    variant="primary"
+                    handleClick={handleNext}
+                    className={style.button}
+                >
+                    Next
+                </Button>
             </div>
-            <Heading content="What kind of services you are quiz?" className={style.headingSmall} />
-            <Paragraph
-                content="Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concluda-
-turque usu, facete detracto patrioque an per, lucilius pertinacia eu vel."
-            />
-            <Form />
-            <RadioBtnGroup />
-            <h2>Upload Documents</h2>
-            <UploadBox />
-            <HorizontalDivider />
-            <Button handleClick={onSubmit}/>
-        </div>
+        </FormProvider>
     );
 };
 

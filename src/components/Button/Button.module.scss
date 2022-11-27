@@ -1,15 +1,35 @@
 @import '../../variables.scss';
 
 .button {
-    width: 13.125rem;
-    height: 4.625rem;
-    background-color: $primaryColor;
     border: none;
     border-radius: 5px;
-    margin-top: 156px;
-    margin-left: calc(1225px - 530px);
+    cursor: pointer;
+}
+
+.small {
+    width: 11.313rem;
+    height: 4rem;
+}
+
+.medium {
+    width: 13.125rem;
+    height: 4.625rem;
+}
+
+.large {
+    width: 201px;
+    height: 64px;
+}
+
+.primary {
+    background-color: $primaryColor;
     color: $whiteColor;
     font-size: 23.71px;
     font-weight: 500;
-    cursor: pointer;
+}
+
+.secondary {
+    background-color: $backwardColor;
+    color: $textVeryDarkColor;
+    font-size: 21.73px;
 }

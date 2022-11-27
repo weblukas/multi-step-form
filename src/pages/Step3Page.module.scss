@@ -7,5 +7,26 @@
 
 .servicesContainer {
     max-width: 1225px;
-    padding:  117px 185.5px 0 164px;
+    padding:  117px 327.5px 0 164px;
+}
+
+.btnContainer {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btnBackwardSpacing {
+    margin-top: 38px;
+}
+.btnForwardSpacing {
+    margin-top: 38px;
+}
+
+.horizontalDivider {
+    margin-top: 56px;
+}
+
+.button {
+    margin-top: 38px;
 }

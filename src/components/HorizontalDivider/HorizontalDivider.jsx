@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './HorizontalDivider.module.scss'
 
-const HorizontalDivider = () => {
+const HorizontalDivider = ({className}) => {
   return (
-    <div className={style.divider}></div>
+    <div className={`${style.divider} ${className}`}></div>
   )
 }
 

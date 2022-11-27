@@ -1,8 +1,7 @@
 import React, { useState, useRef, createContext, useContext } from 'react';
 import { TextField } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import style from './Form.module.scss';
-
 
 const Form = () => {
     const emailValidation = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -11,23 +10,13 @@ const Form = () => {
         handleSubmit,
         control,
         formState: { errors }
-    } = useForm({
+    } = useFormContext({
         defaultValues: {
             firstAndLastName: '',
             emailAddress: '',
             phone: ''
         }
     });
-
-    const FormContext = createContext();
-
-    function useFormContext() {
-        return useContext(FormContext);
-    }
-
-    function FormProvider({ children }) {
-        return <FormContext.Provider value={person}>{children}</FormContext.Provider>;
-    }
 
     const [person, setPerson] = useState({
         PersonName: '',
@@ -45,7 +34,7 @@ const Form = () => {
 
     const formRef = useRef(null);
 
-    const submit = () => {
+    const submitForm = () => {
         if (formRef.current) {
             formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
         }
@@ -72,7 +61,7 @@ const Form = () => {
                 {errors.phone && <p>phone number is not valid</p>}
             </form>
 
-            {/* <button type='button' onClick={submit}>submit</button> */}
+            <button type='button' onClick={submitForm}>submit</button>
         </>
     );
 };
