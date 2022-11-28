@@ -1,3 +1,15 @@
+@import '../../variables.scss';
+
 .radioBtnGroupContainer {
     margin-top: 50px;
+}
+
+.radioBtnContainer {
+    width: 743px;
+    height: 68px;
+    border: 1px solid $borderDarkColor;
+    margin-top: 19.5px;
+    display: flex;
+    align-items: center;
+    padding-left: 34px;
 }

@@ -16,24 +16,26 @@ const Step1Page = () => {
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value);
+        console.log(selectedValue);
     };
 
     return (
-        <div>
+        <section>
             <div className={style.servicesContainer}>
                 <Stepper progress="1" />
                 <Heading className={style.headingBig}>
                     What kind of Services You need?
                 </Heading>
-                <Paragraph>
-                    Tation argumentum et usu, dicit viderer evertitur
-                    te has. Eu dictas concludaturque usu, facete detracto
-                    patrioque an per, lucilius pertinacia eu vel.
+                <Paragraph fontSize="big">
+                    Tation argumentum et usu, dicit viderer evertitur te has. Eu
+                    dictas concludaturque usu, facete detracto patrioque an per,
+                    lucilius pertinacia eu vel.
                 </Paragraph>
 
                 <div className={style.cardsContainer}>
                     <SeviceCard image="diagram.png" title="Corporate Services">
                         <StandaloneRadio
+                            className={style.radioBtn}
                             checked={selectedValue === 'corporate services'}
                             handleChange={handleChange}
                             value="corporate services"
@@ -43,6 +45,7 @@ const Step1Page = () => {
                     </SeviceCard>
                     <SeviceCard image="switch.png" title="Freelancing Services">
                         <StandaloneRadio
+                            className={style.radioBtn}
                             checked={selectedValue === 'freelancing services'}
                             handleChange={handleChange}
                             value="freelancing services"
@@ -54,15 +57,17 @@ const Step1Page = () => {
                     </SeviceCard>
                     <SeviceCard image="web-development.png" title="Development">
                         <StandaloneRadio
+                        className={style.radioBtn}
                             checked={selectedValue === 'development'}
                             handleChange={handleChange}
                             value="development"
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'development' }}
+                        
                         />
                     </SeviceCard>
                 </div>
-                <HorizontalDivider  className={style.horizontalDivider}/>
+                <HorizontalDivider className={style.horizontalDivider} />
                 <Button
                     className={style.button}
                     size="medium"
@@ -72,7 +77,7 @@ const Step1Page = () => {
                     Next
                 </Button>
             </div>
-        </div>
+        </section>
     );
 };
 

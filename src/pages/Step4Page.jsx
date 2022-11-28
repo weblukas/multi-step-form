@@ -5,14 +5,17 @@ import Heading from '../components/Heading/Heading';
 import Paragraph from '../components/Paragraph/Paragraph';
 import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider';
 import style from './Step4Page.module.scss';
-import MSelect from '../components/Select/Select';
+import MultiSelect from '../components/MultiSelect/MultiSelect';
 import { budget, support } from '../data';
 import Subheading from '../components/Subheading/Subheading';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Button from '../components/Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Step4Page = () => {
+  const navigate = useNavigate();
     const selectStyles = {
         control: (style) => ({ ...style, height: 75 })
     };
@@ -32,6 +35,11 @@ const Step4Page = () => {
         
     };
 
+
+    const handleNext = () => {
+        navigate('/step-4');
+    };
+
     const handleSelect = (selectedOption)=>{
       setSelectedBudget(selectedOption)
       console.log(selectedBudget)
@@ -40,7 +48,7 @@ const Step4Page = () => {
     const { coding, mobileApp, mobileDesign } = checked;
 
     return (
-        <div className={style.servicesContainer}>
+        <section className={style.servicesContainer}>
             <div className={style.flexContainer}>
                 <Stepper progress="4" />
                 <ProgressBar progress="4" />
@@ -55,7 +63,7 @@ const Step4Page = () => {
                 <img src="budgetIcon.png" alt="" />
                 <Subheading>Budget</Subheading>
             </div>
-            <MSelect
+            <MultiSelect
                 options={budget}
                 styles={selectStyles}
                 defaultValue={budget[0]}
@@ -65,14 +73,14 @@ const Step4Page = () => {
                 <img src="msg2Icon.png" alt="" />
                 <Subheading>Required Support</Subheading>
             </div>
-            <MSelect
+            <MultiSelect
                 options={support}
                 styles={selectStyles}
                 defaultValue={support[0]}
             />
             <Subheading>Optimization and Accessibility</Subheading>
 
-            <FormGroup className={style.formGroup}>
+            <FormGroup row={true}>
                 <FormControlLabel
                 className={style.checkboxContainer}
                     control={
@@ -87,6 +95,7 @@ const Step4Page = () => {
                 />
 
                 <FormControlLabel
+                className={style.checkboxContainer}
                     control={
                         <Checkbox
                             label="Mobile APP"
@@ -98,6 +107,7 @@ const Step4Page = () => {
                     label="mobileApp"
                 />
                 <FormControlLabel
+                className={style.checkboxContainer}
                     control={
                         <Checkbox
                             label="Mobile Design"
@@ -110,7 +120,8 @@ const Step4Page = () => {
                 />
             </FormGroup>
             <HorizontalDivider className={style.horizontalDivider} />
-        </div>
+            <Button handleClick={handleNext} size='small' variant='primary' >Next</Button>
+        </section>
     );
 };
 

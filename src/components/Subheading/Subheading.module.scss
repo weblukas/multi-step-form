@@ -1,7 +1,33 @@
 @import '../../variables.scss';
 
-.subheading {
+.light {
+    color: $textGrey-300-Color;
+}
+
+.dark {
+    color: $blackColor;
+}
+
+.grey400 {
+    color: $textGrey-400-Color;
+}
+
+.small {
+    font-size: 18px;
+}
+
+.big {
     font-size: 23px;
+}
+
+.weight400 {
+    font-weight: 400;
+}
+
+.weight700 {
     font-weight: 700;
-    color: $textLightColor;
+}
+
+.weight800 {
+    font-weight: 800;
 }

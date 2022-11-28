@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+.planCard {
+    width: 372.44px;
+    height: 268px;
+    border: 1px solid $borderDarkerColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,3 +1,9 @@
+export const languages = [
+    {value: 'English', label: 'English'},
+    {value: 'Polish', label: 'Polish'},
+    {value: 'Spanish', label: 'Spanish'},
+]
+
 export const budget = [
     {value: '$390 - $600', label: '$390 - $600'},
     {value: '$490 - $700', label: '$490 - $700'},

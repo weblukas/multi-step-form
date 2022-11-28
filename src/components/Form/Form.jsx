@@ -49,7 +49,7 @@ const Form = () => {
 
     return (
         <>
-            <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+            <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className={style.form}>
                 <Controller
                     name="firstAndLastName"
                     control={control}

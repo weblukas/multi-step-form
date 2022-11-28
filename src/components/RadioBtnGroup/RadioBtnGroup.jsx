@@ -3,48 +3,50 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import style from './RadioBtnGroup.module.scss';
-import { styled } from '@mui/material/styles';
-import { Controller, useFormContext } from 'react-hook-form';
 
-const StyledFormLabel = styled(FormLabel)({
-    color: '#5F5F63',
-    fontSize: '23px',
-    fontWeight: '800'
-});
-
-const RadioBtnGroup = () => {
-    const {
-        handleSubmit,
-        control,
-        formState: { errors }
-    } = useFormContext();
+const RadioBtnGroup = ({handleChange, value, defaultValue}) => {
     return (
         <div className={style.radioBtnGroupContainer}>
-            <Controller
-                render={({ field }) => (
-                    <RadioGroup
-                        row
-                        aria-label="gender"
-                        defaultValue="male"
-                        {...field}
-                    >
+            <FormControl>
+                <div></div>
+                <RadioGroup
+                    aria-labelledby="web design group"
+                    defaultValue="webDesign1"
+                    name="radio-buttons-group"
+                    value={value}
+                    onChange={handleChange}
+                >
+                    <div className={style.radioBtnContainer}>
                         <FormControlLabel
-                            value="male"
+                            value="webDesign1"
                             control={<Radio />}
-                            label="Male"
+                            label="Web Design"
                         />
+                    </div>
+                    <div className={style.radioBtnContainer}>
                         <FormControlLabel
-                            value="female"
+                            value="webDesign2"
                             control={<Radio />}
-                            label="Female"
+                            label="Web Design"
                         />
-                    </RadioGroup>
-                )}
-                name="RadioGroup"
-                control={control}
-            />
+                    </div>
+                    <div className={style.radioBtnContainer}>
+                        <FormControlLabel
+                            value="webDesign3"
+                            control={<Radio />}
+                            label="Web Design"
+                        />
+                    </div>
+                    <div className={style.radioBtnContainer}>
+                        <FormControlLabel
+                            value="webDesign4"
+                            control={<Radio />}
+                            label="Web Design"
+                        />
+                    </div>
+                </RadioGroup>
+            </FormControl>
         </div>
     );
 };
