@@ -48,10 +48,10 @@ const Step3Page = () => {
                 <Stepper progress="3" />
                 <ProgressBar progress="3" />
             </div>
-            <Heading className={style.headingSmall}>
+            <Heading fontSize='small'>
                 What kind of services you Need?
             </Heading>
-            <Paragraph>
+            <Paragraph fontSize='medium'>
                 Tation argumentum et usu, dicit viderer evertitur te has. Eu
                 dictas concluda- turque usu, facete detracto patrioque an per,
                 lucilius pertinacia eu vel.

@@ -13,14 +13,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import Textarea from '../components/Textarea/Textarea';
 
 const Step4Page = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const selectStyles = {
         control: (style) => ({ ...style, height: 75 })
     };
 
-    const[selectedBudget, setSelectedBudget] = useState()
+    const [selectedBudget, setSelectedBudget] = useState();
     const [checked, setChecked] = React.useState({
         coding: false,
         mobileApp: false,
@@ -32,18 +33,16 @@ const Step4Page = () => {
             ...checked,
             [e.target.name]: e.target.checked
         });
-        
     };
-
 
     const handleNext = () => {
-        navigate('/step-4');
+        navigate('/step-5');
     };
 
-    const handleSelect = (selectedOption)=>{
-      setSelectedBudget(selectedOption)
-      console.log(selectedBudget)
-    }
+    const handleSelect = (selectedOption) => {
+        setSelectedBudget(selectedOption);
+        console.log(selectedBudget);
+    };
 
     const { coding, mobileApp, mobileDesign } = checked;
 
@@ -53,15 +52,15 @@ const Step4Page = () => {
                 <Stepper progress="4" />
                 <ProgressBar progress="4" />
             </div>
-            <Heading>Select your budget</Heading>
-            <Paragraph>
+            <Heading fontSize='small'>Select your budget</Heading>
+            <Paragraph fontSize='medium'>
                 Tation argumentum et usu, dicit viderer evertitur te has. Eu
                 dictas concluda- turque usu, facete detracto patrioque an per,
                 lucilius pertinacia eu vel."
             </Paragraph>
             <div className={style.container}>
                 <img src="budgetIcon.png" alt="" />
-                <Subheading>Budget</Subheading>
+                <Subheading fontSize='large' fontWeight='weight700' color='grey300'>Budget</Subheading>
             </div>
             <MultiSelect
                 options={budget}
@@ -71,18 +70,18 @@ const Step4Page = () => {
             />
             <div className={style.container}>
                 <img src="msg2Icon.png" alt="" />
-                <Subheading>Required Support</Subheading>
+                <Subheading fontSize='large' fontWeight='weight700' color='grey300'>Required Support</Subheading>
             </div>
             <MultiSelect
                 options={support}
                 styles={selectStyles}
                 defaultValue={support[0]}
             />
-            <Subheading>Optimization and Accessibility</Subheading>
+            <Subheading fontSize='large' fontWeight='weight700' color='grey300'>Optimization and Accessibility</Subheading>
 
             <FormGroup row={true}>
                 <FormControlLabel
-                className={style.checkboxContainer}
+                    className={style.checkboxContainer}
                     control={
                         <Checkbox
                             checked={coding}
@@ -91,23 +90,23 @@ const Step4Page = () => {
                             inputProps={{ 'aria-label': 'controlled' }}
                         />
                     }
-                    label="coding"
+                    label="Semantic coding"
                 />
 
                 <FormControlLabel
-                className={style.checkboxContainer}
+                    className={style.checkboxContainer}
                     control={
                         <Checkbox
-                            label="Mobile APP"
-                            onChange={handleChange}
                             checked={mobileApp}
-                            name="mobileApp"
+                            onChange={handleChange}
+                            name="Mobile-APP"
+                            inputProps={{ 'aria-label': 'controlled' }}
                         />
                     }
-                    label="mobileApp"
+                    label="mobile APP"
                 />
                 <FormControlLabel
-                className={style.checkboxContainer}
+                    className={style.checkboxContainer}
                     control={
                         <Checkbox
                             label="Mobile Design"
@@ -116,11 +115,18 @@ const Step4Page = () => {
                             name="mobileDesign"
                         />
                     }
-                    label="mobileDesign"
+                    label="Mobile Design"
                 />
             </FormGroup>
+            <div className={style.textAreaContainer}>
+                <Textarea />
+            </div>
             <HorizontalDivider className={style.horizontalDivider} />
-            <Button handleClick={handleNext} size='small' variant='primary' >Next</Button>
+            <div className={style.btnContainer}>
+                <Button handleClick={handleNext} size="small" variant="primary">
+                    Next
+                </Button>
+            </div>
         </section>
     );
 };

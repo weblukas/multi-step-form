@@ -8,8 +8,10 @@
     font-style: italic;
     font-size: 15px;
     font-weight: 400;
-
+    
     &_label {
+        display: flex;
+        align-items: center;
         font-size: 18px;
     }
 

@@ -13,7 +13,7 @@ const StandaloneRadio = ({ handleChange, checked, value, name }) => {
     return (
         <StyledRadio
             checked={checked}
-            onChange={handleChange}
+            onClick={handleChange}
             value={value}
             name={name}
         />

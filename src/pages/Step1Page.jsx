@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../components/Button/Button';
-import SeviceCard from '../components/ServiceCard/ServiceCard';
+import ServiceCard from '../components/ServiceCard/ServiceCard';
 import HorizontalDivider from '../components/HorizontalDivider/HorizontalDivider';
 import style from './Step1Page.module.scss';
 import { useNavigate } from 'react-router-dom';
@@ -10,13 +10,14 @@ import Paragraph from '../components/Paragraph/Paragraph';
 import Radio from '@mui/material/Radio';
 import StandaloneRadio from '../components/StandaloneRadio/StandaloneRadio';
 
+
 const Step1Page = () => {
     const navigate = useNavigate();
-    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState('corporate services');
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value);
-        console.log(selectedValue);
+        console.log(e.target.value);
     };
 
     return (
@@ -33,7 +34,7 @@ const Step1Page = () => {
                 </Paragraph>
 
                 <div className={style.cardsContainer}>
-                    <SeviceCard image="diagram.png" title="Corporate Services">
+                    <ServiceCard image="diagram.png" title="Corporate Services">
                         <StandaloneRadio
                             className={style.radioBtn}
                             checked={selectedValue === 'corporate services'}
@@ -42,8 +43,8 @@ const Step1Page = () => {
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'corporate services' }}
                         />
-                    </SeviceCard>
-                    <SeviceCard image="switch.png" title="Freelancing Services">
+                    </ServiceCard>
+                    <ServiceCard image="switch.png" title="Freelancing Services">
                         <StandaloneRadio
                             className={style.radioBtn}
                             checked={selectedValue === 'freelancing services'}
@@ -54,18 +55,17 @@ const Step1Page = () => {
                                 'aria-label': 'freelancing servieces'
                             }}
                         />
-                    </SeviceCard>
-                    <SeviceCard image="web-development.png" title="Development">
+                    </ServiceCard>
+                    <ServiceCard image="web-development.png" title="Development">
                         <StandaloneRadio
-                        className={style.radioBtn}
+                            className={style.radioBtn}
                             checked={selectedValue === 'development'}
                             handleChange={handleChange}
                             value="development"
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'development' }}
-                        
                         />
-                    </SeviceCard>
+                    </ServiceCard>
                 </div>
                 <HorizontalDivider className={style.horizontalDivider} />
                 <Button
