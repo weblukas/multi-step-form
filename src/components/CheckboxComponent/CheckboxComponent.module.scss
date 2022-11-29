@@ -1,9 +1,12 @@
 @import '../../variables.scss';
 
 .checkboxContainer {
-    width: 244px;
+    width: 243px;
     height: 64px;
     border: 1px solid $borderDarkerColor;
     display: flex;
     padding-left: 19px;
+    color: $textGrey-300-Color;
+    font-weight: 600;
+    font-family: 'Jost';
 }

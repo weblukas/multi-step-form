@@ -11,7 +11,7 @@ import StandaloneRadio from '../components/StandaloneRadio/StandaloneRadio';
 
 const Step1Page = () => {
     const navigate = useNavigate();
-    const [selectedValue, setSelectedValue] = useState('corporate services');
+    const [selectedValue, setSelectedValue] = useState('corporate-services');
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value);
@@ -34,9 +34,9 @@ const Step1Page = () => {
                     <ServiceCard image="diagram.png" title="Corporate Services">
                         <StandaloneRadio
                             className={style.radioBtn}
-                            checked={selectedValue === 'corporate services'}
+                            checked={selectedValue === 'corporate-services'}
                             handleChange={handleChange}
-                            value="corporate services"
+                            value="corporate-services"
                             name="radio-buttons"
                             inputProps={{ 'aria-label': 'corporate services' }}
                         />
@@ -47,9 +47,9 @@ const Step1Page = () => {
                     >
                         <StandaloneRadio
                             className={style.radioBtn}
-                            checked={selectedValue === 'freelancing services'}
+                            checked={selectedValue === 'freelancing-services'}
                             handleChange={handleChange}
-                            value="freelancing services"
+                            value="freelancing-services"
                             name="radio-buttons"
                             inputProps={{
                                 'aria-label': 'freelancing servieces'

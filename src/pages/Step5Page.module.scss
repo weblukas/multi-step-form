@@ -1,13 +1,13 @@
 @import '../variables.scss';
+@import '../mixins.scss';
+
+.flexContainer {
+    @include flex-space-btw;
+}
 
 .servicesContainer {
     max-width: 1225px;
     padding: 117px 287px 0 153px;
-}
-
-.flexContainer {
-    display: flex;
-    justify-content: space-between
 }
 
 .planCardContainer {
@@ -16,12 +16,26 @@
     margin-top: 36px;
 }
 
+.subheadingContainer {
+    margin-top: 38px;
+}
+
 .btnContainer {
     margin-top: 38px;
     display: flex;
     justify-content: flex-end;
 }
 
+.textareaContainer {
+    margin-top: 30px;
+}
+
 .horizontalDivider {
     margin-top: 56px;
+}
+
+.formGroup {
+   display: flex;
+   justify-content: space-evenly;
+   
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { budget, support } from '../data';
-import MultiSelect from '../components/MultiSelect/MultiSelect';
 import style from './Step4Page.module.scss';
+import MultiSelect from '../components/MultiSelect/MultiSelect';
 import FormGroup from '@mui/material/FormGroup';
 
 import Stepper from '../components/Stepper/Stepper';
@@ -97,7 +97,7 @@ const Step4Page = () => {
             <Subheading fontSize="large" fontWeight="weight700" color="grey300">
                 Optimization and Accessibility
             </Subheading>
-            <FormGroup row={true}>
+            <FormGroup row={true} className={style.formGroup}>
                 <CheckboxComponent
                     checked={semanticCoding}
                     onChange={handleChange}

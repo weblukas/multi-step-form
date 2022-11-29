@@ -37,13 +37,15 @@ const RadioForm = () => {
                 >
                     <FormControlLabel
                         value="male"
-                        control={<Radio />}
+                        control={<Radio sx={{color: '#6684F2'}}/>}
                         label="Male"
+                        sx={{color:'#5F5F63' }}
                     />
                     <FormControlLabel
                         value="female"
-                        control={<Radio />}
+                        control={<Radio sx={{color: '#6684F2'}}/>}
                         label="Female"
+                        sx={{color:'#5F5F63' }}
                     />
                 </RadioGroup>
             </FormControl>
