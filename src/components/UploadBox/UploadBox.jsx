@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import style from './UploadBox.module.scss';
 import { useDropzone } from 'react-dropzone';
 
@@ -6,7 +6,7 @@ const UploadBox = () => {
     const onDrop = useCallback((acceptedFiles) => {
         console.log(acceptedFiles);
     }, []);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    const { getRootProps, getInputProps } = useDropzone({
         onDrop,
         accept: {
             'text/*': ['.pdf', '.doc', '.docx']

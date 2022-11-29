@@ -11,6 +11,4 @@ const SeviceCard = ({ image, title, children }) => {
     );
 };
 
-// proptypes dodaj
-
 export default SeviceCard;

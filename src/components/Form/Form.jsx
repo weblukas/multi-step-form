@@ -1,25 +1,22 @@
 import React, { useState, useRef, createContext, useContext } from 'react';
 import { TextField } from '@mui/material';
-import { Controller, useFormContext, useWatch } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import style from './Form.module.scss';
-import Subheading from '../Subheading/Subheading';
-import CustomRadio from '../CustomRadio/CustomRadio';
 import UploadBox from '../UploadBox/UploadBox';
 import HorizontalDivider from '../HorizontalDivider/HorizontalDivider';
 import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
-
+import RadioForm from '../RadioForm/RadioForm';
 
 const Form = () => {
     const emailValidation =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-        const[errorMsg, setErrorMsg] = useState(false)
+
+    const [errorMsg, setErrorMsg] = useState(false);
 
     const {
         handleSubmit,
         control,
-        watch,
         formState: { errors }
     } = useFormContext({
         defaultValues: {
@@ -42,8 +39,6 @@ const Form = () => {
             PersonAddress: emailAddress,
             PersonPhone: phone
         });
-
-        console.log(person);
     };
 
     const formRef = useRef(null);
@@ -58,19 +53,17 @@ const Form = () => {
 
     const navigate = useNavigate();
 
-   
-  
     const handleNext = () => {
-        if(errors.firstAndLastName === true){
-            console.log('błąd')
-            setErrorMsg(true)
-        }else{
+        if (errors.firstAndLastName === true) {
+            setErrorMsg(true);
+        } else {
             navigate('/step-3');
-            console.log('nie ma błedu')
         }
     };
-
-
+    const handleBlur = () => {
+        setErrorMsg(true);
+        submitForm();
+    };
     return (
         <>
             <form
@@ -88,9 +81,11 @@ const Form = () => {
                             value={person.firstAndLastName}
                             label="First and last Name"
                             className={style.input}
+                            onBlur={handleBlur}
                         />
                     )}
                 />
+                {errors.firstAndLastName && <p>name is not valid</p>}
                 <Controller
                     name="emailAddress"
                     control={control}
@@ -101,9 +96,11 @@ const Form = () => {
                             value={person.emailAddress}
                             label="Email Address"
                             className={style.input}
+                            onBlur={handleBlur}
                         />
                     )}
                 />
+                {errors.emailAddress && <p>email address is not valid</p>}
                 <Controller
                     name="phone"
                     control={control}
@@ -115,31 +112,28 @@ const Form = () => {
                             label="Phone"
                             type="number"
                             className={style.input}
+                            onBlur={handleBlur}
                         />
                     )}
                 />
-                {errors.firstAndLastName && <p>name is not valid</p>}
-                {errors.emailAddress && <p>email address is not valid</p>}
                 {errors.phone && <p>phone number is not valid</p>}
                 {errorMsg && <p>please fill up the form</p>}
             </form>
-            <Subheading>Gender</Subheading>  
-            <CustomRadio  />
+
+            <RadioForm />
             <h2>Upload Documents</h2>
-                <UploadBox />
-                <HorizontalDivider className={style.horizontalDivider} />
-                <div className={style.btnContainer}>
-                   
-            <Button
-                        size="small"
-                        variant="primary"
-                        handleClick={handleNext}
-                        className={style.button}
-                    >
-                        Next
-                    </Button>
-                
-                </div>           
+            <UploadBox />
+            <HorizontalDivider className={style.horizontalDivider} />
+            <div className={style.btnContainer}>
+                <Button
+                    size="small"
+                    variant="primary"
+                    handleClick={handleNext}
+                    className={style.button}
+                >
+                    Next
+                </Button>
+            </div>
         </>
     );
 };

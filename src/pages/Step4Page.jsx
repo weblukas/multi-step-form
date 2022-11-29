@@ -9,8 +9,7 @@ import MultiSelect from '../components/MultiSelect/MultiSelect';
 import { budget, support } from '../data';
 import Subheading from '../components/Subheading/Subheading';
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import CheckboxComponent from '../components/CheckboxComponent/CheckboxComponent';
 import Button from '../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import Textarea from '../components/Textarea/Textarea';
@@ -23,7 +22,7 @@ const Step4Page = () => {
 
     const [selectedBudget, setSelectedBudget] = useState();
     const [checked, setChecked] = React.useState({
-        coding: false,
+        semanticCoding: false,
         mobileApp: false,
         mobileDesign: false
     });
@@ -44,7 +43,7 @@ const Step4Page = () => {
         console.log(selectedBudget);
     };
 
-    const { coding, mobileApp, mobileDesign } = checked;
+    const { semanticCoding, mobileApp, mobileDesign } = checked;
 
     return (
         <section className={style.servicesContainer}>
@@ -80,46 +79,31 @@ const Step4Page = () => {
             <Subheading fontSize='large' fontWeight='weight700' color='grey300'>Optimization and Accessibility</Subheading>
 
             <FormGroup row={true}>
-                <FormControlLabel
-                    className={style.checkboxContainer}
-                    control={
-                        <Checkbox
-                            checked={coding}
-                            onChange={handleChange}
-                            name="coding"
-                            inputProps={{ 'aria-label': 'controlled' }}
-                        />
-                    }
-                    label="Semantic coding"
-                />
-
-                <FormControlLabel
-                    className={style.checkboxContainer}
-                    control={
-                        <Checkbox
-                            checked={mobileApp}
-                            onChange={handleChange}
-                            name="Mobile-APP"
-                            inputProps={{ 'aria-label': 'controlled' }}
-                        />
-                    }
-                    label="mobile APP"
-                />
-                <FormControlLabel
-                    className={style.checkboxContainer}
-                    control={
-                        <Checkbox
-                            label="Mobile Design"
-                            onChange={handleChange}
-                            checked={mobileDesign}
-                            name="mobileDesign"
-                        />
-                    }
-                    label="Mobile Design"
-                />
+            <CheckboxComponent
+              checked={semanticCoding}
+              onChange={handleChange}
+              name='semanticCoding'
+              inputProps={{'aria-label': 'controlled'}}
+              label='Semantic coding'
+               />
+               <CheckboxComponent
+              checked={mobileApp}
+              onChange={handleChange}
+              name='mobileApp'
+              inputProps={{'aria-label': 'controlled'}}
+              label='Mobile APP'
+               />
+               <CheckboxComponent
+              checked={mobileDesign}
+              onChange={handleChange}
+              name='mobileDesign'
+              inputProps={{'aria-label': 'controlled'}}
+              label='Mobile Design'
+               />
+              
             </FormGroup>
             <div className={style.textAreaContainer}>
-                <Textarea />
+                <Textarea withHeading={true}/>
             </div>
             <HorizontalDivider className={style.horizontalDivider} />
             <div className={style.btnContainer}>

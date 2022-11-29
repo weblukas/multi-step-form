@@ -1,21 +1,16 @@
 @import '../variables.scss';
 
 .servicesContainer {
-    max-width: 1225px; // 86.5rem;
-    // padding: 7.333rem 10.625rem 10.5rem;
-    padding-left: 164px;
-    padding-right: 160px;
-    padding-top: 117px;
+    max-width: 76.563rem;
+    padding-left: 10.25rem;
+    padding-right: 10rem;
+    padding-top: 7.313rem;
 }
 
 .cardsContainer {
     display: flex;
     margin-top: 78px;
     gap: 27.28px;
-}
-
-.headingBig {
-    font-size: $bigHeadingFont;
 }
 
 .button {

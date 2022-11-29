@@ -32,14 +32,12 @@ const Step3Page = () => {
 
     const handleSelect = (selectedOption) => {
         setSelectedLanguage(selectedOption);
-        console.log(selectedLanguage);
     };
 
     const [value, setValue] = React.useState('');
 
     const handleChange = (event) => {
         setValue(event.target.value);
-        console.log(value);
     };
 
     return (
@@ -66,7 +64,7 @@ const Step3Page = () => {
                 defaultValue={languages[0]}
                 onChange={handleSelect}
             />
-            <Textarea />
+            <Textarea withHeading={true}/>
             <HorizontalDivider className={style.horizontalDivider} />
             <div className={style.btnContainer}>
                 <Button

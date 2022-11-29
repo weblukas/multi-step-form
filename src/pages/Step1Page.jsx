@@ -7,9 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Heading from '../components/Heading/Heading';
 import Stepper from '../components/Stepper/Stepper';
 import Paragraph from '../components/Paragraph/Paragraph';
-import Radio from '@mui/material/Radio';
 import StandaloneRadio from '../components/StandaloneRadio/StandaloneRadio';
-
 
 const Step1Page = () => {
     const navigate = useNavigate();
@@ -17,14 +15,13 @@ const Step1Page = () => {
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value);
-        console.log(e.target.value);
     };
 
     return (
         <section>
             <div className={style.servicesContainer}>
                 <Stepper progress="1" />
-                <Heading className={style.headingBig}>
+                <Heading fontSize="large">
                     What kind of Services You need?
                 </Heading>
                 <Paragraph fontSize="big">
@@ -44,7 +41,10 @@ const Step1Page = () => {
                             inputProps={{ 'aria-label': 'corporate services' }}
                         />
                     </ServiceCard>
-                    <ServiceCard image="switch.png" title="Freelancing Services">
+                    <ServiceCard
+                        image="switch.png"
+                        title="Freelancing Services"
+                    >
                         <StandaloneRadio
                             className={style.radioBtn}
                             checked={selectedValue === 'freelancing services'}
@@ -56,7 +56,10 @@ const Step1Page = () => {
                             }}
                         />
                     </ServiceCard>
-                    <ServiceCard image="web-development.png" title="Development">
+                    <ServiceCard
+                        image="web-development.png"
+                        title="Development"
+                    >
                         <StandaloneRadio
                             className={style.radioBtn}
                             checked={selectedValue === 'development'}
