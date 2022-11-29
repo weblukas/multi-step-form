@@ -20,7 +20,7 @@ const Step2Page = () => {
                 <Heading fontSize="small">
                     What kind of services you are quiz?
                 </Heading>
-                <Paragraph fontSize="large">
+                <Paragraph fontSize="medium">
                     Tation argumentum et usu, dicit viderer evertitur te has. Eu
                     dictas concluda- turque usu, facete detracto patrioque an
                     per, lucilius pertinacia eu vel.

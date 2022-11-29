@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .textarea {
-    width: 739px;
+    width: 100%;
     height: 140px;
     resize: none;
     padding: 27.2px 34.5px;
@@ -8,6 +10,8 @@
     font-style: italic;
     font-size: 15px;
     font-weight: 400;
+    border: 1px solid $borderLighterColor;
+    border-radius: 3px;
 
     &_label {
         display: flex;

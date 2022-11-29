@@ -19,6 +19,8 @@ const Step5Page = () => {
         mobileApp: false,
         mobileDesign: false
     });
+    const [textMsg, setTextMsg] = React.useState('');
+    const { semanticCoding, mobileApp, mobileDesign } = checked;
 
     const handleSubmit = () => {};
 
@@ -28,7 +30,10 @@ const Step5Page = () => {
             [e.target.name]: e.target.checked
         });
     };
-    const { semanticCoding, mobileApp, mobileDesign } = checked;
+
+    const handleTextarea = (e)=>{
+      setTextMsg(e.target.value);
+  }
     return (
         <section className={style.servicesContainer}>
             <div className={style.flexContainer}>
@@ -44,21 +49,21 @@ const Step5Page = () => {
             <DatePicker />
             <div className={style.planCardContainer}>
                 <PlanCard img="plan1.png">
-                    <Subheading>Unlimited plan</Subheading>
+                    <Subheading fontSize='xlarge' fontWeight='weight800' color='grey700'>Unlimited plan</Subheading>
                     <Paragraph fontSize="small">
                         Tation argumentum et usu, dicit viderer evertitur te
                         has. Eu dictas concludaturque usu,
                     </Paragraph>
                 </PlanCard>
                 <PlanCard img="plan2.png">
-                    <Subheading>Limited plan</Subheading>
+                    <Subheading fontSize='xlarge' fontWeight='weight800' color='grey700'>Limited plan</Subheading>
                     <Paragraph fontSize="small">
                         Tation argumentum et usu, dicit viderer evertitur te
                         has. Eu dictas concludaturque usu,
                     </Paragraph>
                 </PlanCard>
             </div>
-            <Subheading fontSize="small" fontWeight="weight800" color="grey400">
+            <Subheading fontSize="medium" fontWeight="weight800" color="grey300">
                 Optimatization and Accessibility
             </Subheading>
             <FormGroup row={true} style={{ marginTop: 16 }}>
@@ -85,7 +90,7 @@ const Step5Page = () => {
                 />
             </FormGroup>
             <div>
-                <Textarea />
+                <Textarea onChange={handleTextarea}/>
             </div>
             <HorizontalDivider className={style.horizontalDivider} />
             <div className={style.btnContainer}>
