@@ -5,7 +5,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import style from './DatePicker.module.scss';
-import CalendarIcon from '../CalendarIcon/CalendarIcon';
 
 const DatePicker = ({date, handleDate }) => {
 
@@ -16,11 +15,6 @@ const DatePicker = ({date, handleDate }) => {
       renderInput={(props) => <TextField {...props} />}
       value={date}
       onChange={handleDate}
-      componentsProps={{
-    tabs: {
-      dateRangeIcon: <CalendarIcon />,
-    },
-  }}
     />
   </LocalizationProvider></div>
   )

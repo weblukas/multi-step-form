@@ -18,7 +18,7 @@ const CheckboxComponent = ({ onChange, checked, name, inputProps, label }) => {
         <div className={style.outerContainer}>
             <ThemeProvider theme={checkboxTheme}>
                 <FormControlLabel
-                    className={style.checkboxContainer}
+                    className={`${style.checkboxContainer} ${checked && style.checked}`}
                     control={
                         <Checkbox
                             checked={checked}

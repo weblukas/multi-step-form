@@ -15,8 +15,6 @@ import CheckboxComponent from '../components/CheckboxComponent/CheckboxComponent
 import Button from '../components/Button/Button';
 import Textarea from '../components/Textarea/Textarea';
 
-
-
 const Step4Page = () => {
     const [selectedBudget, setSelectedBudget] = useState();
     const [checked, setChecked] = React.useState({
@@ -47,9 +45,9 @@ const Step4Page = () => {
         setSelectedBudget(selectedOption);
     };
 
-    const handleTextarea = (e)=>{
+    const handleTextarea = (e) => {
         setTextMsg(e.target.value);
-    }
+    };
 
     return (
         <section className={style.servicesContainer}>

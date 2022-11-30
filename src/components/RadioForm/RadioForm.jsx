@@ -18,7 +18,6 @@ const RadioForm = () => {
 
     const handleChange = (event) => {
         setValue(event.target.value);
-        console.log(event.target.value);
     };
 
     return (
@@ -29,7 +28,7 @@ const RadioForm = () => {
                 </StyledFormLabel>
                 <RadioGroup
                     row
-                    aria-labelledby="radio-buttons-group-label"
+                    aria-labelledby="radio-buttons-group-gender"
                     defaultValue="male"
                     name="row-radio-buttons-group"
                     value={value}
@@ -45,7 +44,7 @@ const RadioForm = () => {
                         value="female"
                         control={<Radio sx={{color: '#6684F2'}}/>}
                         label="Female"
-                        sx={{color:'#5F5F63' }}
+                        sx={{color:'#5F5F63'}}
                     />
                 </RadioGroup>
             </FormControl>

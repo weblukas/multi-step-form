@@ -1,16 +1,22 @@
 import React, { useState, useRef } from 'react';
 import { TextField } from '@mui/material';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import style from './Form.module.scss';
 import UploadBox from '../UploadBox/UploadBox';
 import HorizontalDivider from '../HorizontalDivider/HorizontalDivider';
 import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import RadioForm from '../RadioForm/RadioForm';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const Form = () => {
-    const emailValidation =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const schema = yup.object().shape({
+        firstAndLastName: yup.string().min(5).max(30).required(),
+        emailAddress: yup.string().email().required(),
+        phone: yup.number().min(6).max(18).required(),
+    });
 
     const [errorMsg, setErrorMsg] = useState(false);
 
@@ -18,12 +24,13 @@ const Form = () => {
         handleSubmit,
         control,
         formState: { errors }
-    } = useFormContext({
+    } = useForm({
         defaultValues: {
             firstAndLastName: '',
             emailAddress: '',
             phone: ''
-        }
+        },
+        resolver: yupResolver(schema)
     });
 
     const [person, setPerson] = useState({
@@ -74,7 +81,6 @@ const Form = () => {
                 <Controller
                     name="firstAndLastName"
                     control={control}
-                    rules={{ required: true, maxLength: 30 }}
                     render={({ field }) => (
                         <TextField
                             {...field}
@@ -89,7 +95,6 @@ const Form = () => {
                 <Controller
                     name="emailAddress"
                     control={control}
-                    rules={{ required: true, pattern: emailValidation }}
                     render={({ field }) => (
                         <TextField
                             {...field}
@@ -104,7 +109,6 @@ const Form = () => {
                 <Controller
                     name="phone"
                     control={control}
-                    rules={{ required: true }}
                     render={({ field }) => (
                         <TextField
                             {...field}

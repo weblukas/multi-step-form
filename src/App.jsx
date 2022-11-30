@@ -7,20 +7,17 @@ import Step4Page from './pages/Step4Page';
 import Step5Page from './pages/Step5Page';
 import style from './App.module.scss';
 
-
 function App() {
     return (
         <div className={style.App}>
-          
-                <HeroImg />
-                <Routes>
-                    <Route path="/" element={<Step1Page />} />
-                    <Route path="/step-2" element={<Step2Page />} />
-                    <Route path="/step-3" element={<Step3Page />} />
-                    <Route path="/step-4" element={<Step4Page />} />
-                    <Route path="/step-5" element={<Step5Page />} />
-                </Routes>
-          
+            <HeroImg />
+            <Routes>
+                <Route path="/" element={<Step1Page />} />
+                <Route path="/step-2" element={<Step2Page />} />
+                <Route path="/step-3" element={<Step3Page />} />
+                <Route path="/step-4" element={<Step4Page />} />
+                <Route path="/step-5" element={<Step5Page />} />
+            </Routes>
         </div>
     );
 }

@@ -38,10 +38,10 @@ const Step3Page = () => {
     const handleChange = (e) => {
         setRadioValue(e.target.value);
     };
-    
-    const handleTextarea = (e)=>{
+
+    const handleTextarea = (e) => {
         setTextMsg(e.target.value);
-    }
+    };
 
     return (
         <section className={style.servicesContainer}>
@@ -49,10 +49,8 @@ const Step3Page = () => {
                 <Stepper progress="3" />
                 <ProgressBar progress="3" />
             </div>
-            <Heading fontSize='small'>
-                What kind of services you Need
-            </Heading>
-            <Paragraph fontSize='medium'>
+            <Heading fontSize="small">What kind of services you Need</Heading>
+            <Paragraph fontSize="medium">
                 Tation argumentum et usu, dicit viderer evertitur te has. Eu
                 dictas concluda- turque usu, facete detracto patrioque an per,
                 lucilius pertinacia eu vel.
@@ -67,7 +65,7 @@ const Step3Page = () => {
                 defaultValue={languages[0]}
                 onChange={handleSelect}
             />
-            <Textarea withHeading={true} onChange={handleTextarea}/>
+            <Textarea withHeading={true} onChange={handleTextarea} />
             <HorizontalDivider className={style.horizontalDivider} />
             <div className={style.btnContainer}>
                 <Button
